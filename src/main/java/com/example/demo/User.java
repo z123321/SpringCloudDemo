@@ -1,15 +1,25 @@
 package com.example.demo;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 
 
-@RestController
+@Controller
 @RequestMapping("/user")
 public class User {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @ResponseBody
     public String login() {
-        return "注册成功";
+        ArrayList<Book> list=new ArrayList();
+        for(int i=0;i<50;i++){
+            list.add(new Book("isbn"+i,"title"+i));
+        }
+        return list.toString();
+
     }
+
+
+
 }
