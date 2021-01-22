@@ -8,9 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/user")
 public class User {
-    @RequestMapping(value = "/hello", method = RequestMethod.GET)
-
-
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login() {
         return "注册成功";
